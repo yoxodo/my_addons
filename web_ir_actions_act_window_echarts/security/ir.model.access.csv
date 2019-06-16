@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_web_ir_actions_act_window_echarts_web_ir_actions_act_window_echarts,web_ir_actions_act_window_echarts.web_ir_actions_act_window_echarts,model_web_ir_actions_act_window_echarts_web_ir_actions_act_window_echarts,,1,0,0,0

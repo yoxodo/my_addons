@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="book_list_template" name="Book List">
+        <t t-tname="Expense_Income_Chart">
+            <div id="chart-expense-income-report"></div>
+        </t>
+    </template>
+</odoo>
