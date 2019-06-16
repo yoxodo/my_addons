@@ -101,6 +101,19 @@
             </field>
         </record>
 
+        <record id="todo_task_detail_compare" model="ir.ui.view">
+            <field name="name">todo.task_detail_compare.view_tree</field>
+            <field name="model">todo.task_detail_compare</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="明细对比" editable="bottom">
+                    <field name="name"/>
+                    <field name="is_done"/>
+                    <field name="deadline"/>
+                </tree>
+            </field>
+        </record>
+
         <!-- Server Action -->
         <record id="action_mark_todo_task_done" model="ir.actions.server">
             <field name="name">标记完成</field>
