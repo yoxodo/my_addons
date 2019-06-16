@@ -68,7 +68,7 @@ class TodoTask(models.Model):
         #     }
         #     compare_list.write(record)
         result = {
-            'name': 'Detail',
+            'name': _('test'),
             'type': 'ir.actions.act_window',
             'res_model': 'todo.task_detail_compare',
             'view_mode': 'tree',
