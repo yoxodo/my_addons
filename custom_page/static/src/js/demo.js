@@ -1,10 +1,10 @@
 odoo.define('custom_page.demo', function (require) {
 "use strict";
 
-var AbstractAction = require('web.AbstractAction');
+var Widget = require('web.Widget');
 var core = require('web.core');
 
-var CustomPageDemo = AbstractAction.extend({
+var CustomPageDemo = Widget.extend({
     template: 'DemoPage',
     events: { 'click .demo-submit': '_onSubmitClick' },
 

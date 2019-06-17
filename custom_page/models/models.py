@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-# class custom_page(models.Model):
-#     _name = 'custom_page.custom_page'
+class custom_page(models.Model):
+    _name = 'custom_page.custom_page'
 
 #     name = fields.Char()
 #     value = fields.Integer()

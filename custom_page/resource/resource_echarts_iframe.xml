@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <template id="assets_backend" name="custom page assets" inherit_id="web.qunit_suite">-->
+        <template id="assets_backend" name="custom page assets" inherit_id="web.assets_backend">
+            <xpath expr="//script[last()]" position="after">
+<!--                <script type="text/javascript" src="/custom_page/static/src/js/demo.js"></script>-->
+<!--                <script type="text/javascript" src="/custom_page/static/src/js/widgets.js"></script>-->
+<!--                <script type="text/javascript" src="/custom_page/static/src/js/china.js"></script>-->
+<!--                <script type="text/javascript" src="/custom_page/static/src/js/maps.js"></script>-->
+<!--                <script type="text/javascript" src="/custom_page/static/src/js/new_file.js"></script>-->
+<!--                <script type="text/javascript" src="/custom_page/static/src/js/echarts.js"></script>-->
+<!--                <link href="/custom_page/static/src/css/index.css" rel="stylesheet" type="text/css"/>-->
+
+                <script type="text/javascript" src="/custom_page/static/lib/echarts/echarts.min.js"></script>
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

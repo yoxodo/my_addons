@@ -1,15 +1,49 @@
 <odoo>
     <data>
-        <record id="action_custom_page" model="ir.actions.client">
-            <field name="name">Custom Page</field>
-            <field name="tag">custom_page.demo</field>
+        <record id="echarts_iframe_view" model="ir.ui.view">
+            <field name="name">custom_page.view_form</field>
+            <field name="model">custom_page.custom_page</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Echarts Html" version="11.0" edit="false" create="false"
+                      style="position:absolute;left:0; top:0; width:100%; height:100%; padding: 0px">
+                    <center>
+                        <iframe src="/desk/index" marginwidth="0" marginheight="0" frameborder="no"
+                                style="height: 1000px; width: 100%; border-width:0px;">
+                        </iframe>
+<!--                        <iframe src="https://www.baidu.com" marginwidth="0" marginheight="0" frameborder="no"-->
+<!--                                style="height: 800px; width: 100%; border-width:0px;">-->
+<!--                        </iframe>-->
+                    </center>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_echarts_qweb" model="ir.actions.client">
+            <field name="name">Echarts_QWeb</field>
+            <field name="tag">web.echarts_widgets</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_echarts_iframe">
+            <field name="name">Echarts_Html</field>
+            <field name="res_model">custom_page.custom_page</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="view_id" ref="echarts_iframe_view"/>
         </record>
 
         <menuitem
-                id="menu_root_custom_page"
-                name="Custom Page"
-                action="action_custom_page"
+                id="menu_root_echarts_qweb"
+                name="Echarts QWeb"
+                action="action_echarts_qweb"
                 groups="base.group_user"
                 sequence="1"/>
+
+        <menuitem
+                id="menu_root_echarts_iframe"
+                name="Echarts Html"
+                action="action_echarts_iframe"
+                groups="base.group_user"
+                sequence="2"/>
     </data>
 </odoo>

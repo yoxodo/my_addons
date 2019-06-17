@@ -26,6 +26,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
+        # 'resource/resource_echarts_iframe.xml',
+        # 'resource/resource_echarts_qweb.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
@@ -33,6 +35,7 @@
         'demo/demo.xml',
     ],
     'qweb': [
-        "static/src/xml/base.xml"
+        "static/src/xml/base.xml",
+        "views/echarts_templates.xml",
     ],
 }

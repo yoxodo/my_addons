@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-name="echart_template">
+        <div id="main" style="width: 600px; height: 400px;"/>
+    </t>
+
+    <t t-name="echartItem">
+        <div id="main" style="width: 600px; height: 400px;"/>
+    </t>
+</templates>

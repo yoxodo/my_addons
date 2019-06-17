@@ -1,20 +1,24 @@
 # -*- coding: utf-8 -*-
+import odoo
+import os
 from odoo import http
+from odoo.http import request
+from jinja2 import Environment, FileSystemLoader
 
-# class CustomPage(http.Controller):
-#     @http.route('/custom_page/custom_page/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+templateLoader = FileSystemLoader(searchpath=BASE_DIR + "/html")
+env = Environment(loader=templateLoader)
 
-#     @http.route('/custom_page/custom_page/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('custom_page.listing', {
-#             'root': '/custom_page/custom_page',
-#             'objects': http.request.env['custom_page.custom_page'].search([]),
-#         })
 
-#     @http.route('/custom_page/custom_page/objects/<model("custom_page.custom_page"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('custom_page.object', {
-#             'object': obj
-#         })
+class Todo(http.Controller):
+    @http.route('/desk/index/', auth='public', csrf=False)
+    def desk_desk(self, **kw):
+        cr, uid, context, pool = request.cr, odoo.SUPERUSER_ID, request.context, request.env
+        values = {}
+
+        users = pool['res.users'].sudo().browse(request.session.uid)
+        values['users'] = users
+
+        template = env.get_template('/page1/index.html')
+        html = template.render(object=values)
+        return html
