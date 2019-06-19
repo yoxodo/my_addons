@@ -23,6 +23,14 @@ window.onresize = function(){
 var pieChart="";
 function pieChar(){
 	pieChart= echarts.init(document.getElementById("pie-chart"));
+	$.post(
+		"/desk/data/",
+		{name: 'Brad'},
+		function (data) {
+
+		},
+		"json"
+	);
 	option = {
 		color:["#4f8bf9","#fea31e","#959595"],
 	    tooltip: {

@@ -12,7 +12,7 @@ env = Environment(loader=templateLoader)
 
 class Todo(http.Controller):
     @http.route('/desk/index/', auth='public', csrf=False)
-    def desk_desk(self, **kw):
+    def desk_index(self, **kw):
         cr, uid, context, pool = request.cr, odoo.SUPERUSER_ID, request.context, request.env
         values = {}
 
@@ -22,3 +22,8 @@ class Todo(http.Controller):
         template = env.get_template('/page1/index.html')
         html = template.render(object=values)
         return html
+
+    @http.route('/desk/data/', auth='public', csrf=False)
+    def desk_data(self, **kw):
+        cr, uid, context, pool = request.cr, odoo.SUPERUSER_ID, request.context, request.env
+        return "hello world"
